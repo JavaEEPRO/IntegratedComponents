@@ -1,0 +1,22 @@
+@model string
+@Scripts.RenderFormat("<script type=\"text/javascript\" src=\"{0}\" charset=\"windows-1251\"></script>", "~/bundles/libs")
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+@StackExchange.Profiling.MiniProfiler.RenderIncludes()
+
+
+@Scripts.Render("~/bundles/myjscrips")
+@if (Model == "cabinet")
+{
+    @Scripts.RenderFormat("<script type=\"text/javascript\" src=\"{0}\" charset=\"windows-1251\"></script>", "~/bundles/sb-admin-js");
+}
+<script 
+    src="https://maps.googleapis.com/maps/api/js?key=@ViewBag.key&v=3.exp&sensor=false">
+</script>
+<script src="~/js/geoByIp/geoByIp.js" charset="windows-1251"></script>
+<script src="~/js/AS/as.resources.js" charset="windows-1251"></script>
+<input type="hidden" class="ark-username" value="@User.Identity.Name" />
