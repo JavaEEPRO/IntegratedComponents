@@ -1,0 +1,15 @@
+           <div class="row">    
+                <div class="row col">
+                    <div class="col-md-6 ">
+                        <div class="form-group main-filter-nav-content-group">
+                            <select class="form-control location-countries">
+                                <option value="0" data-iso="0" >@Html.Lang("catalog-filter-countries-noselected", "Не выбрано", "location-ip")</option>
+                                @foreach (var item in Model)
+                                {
+                                    <option value="@item.id" data-iso="@item.A2" data-code="@item.code">@item.name</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                </div>
+</div>  
